@@ -1,6 +1,8 @@
 package com.myorder.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,12 +37,23 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		RequestDispatcher dispatcher = null;
 		String userid = request.getParameter("userid");
 		String password = request.getParameter("password");
 		System.out.println("USerID ------------------------------"+userid + " ==========password : "+password);
 		LoginUser user = new LoginUser(userid, password);
 		ValidateUser validUser = new ValidateUser(user);
-		if()
+		if(validUser.isValidUser())
+		{
+			//Proceed to homepage which provides the basic functionalities 
+			//like Orders, ProfileUpdate
+		}
+		else
+		{
+			dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
+			//TODO - write toggle error codes in login.jsp - UI designing level
+		}
 		
 	}
 

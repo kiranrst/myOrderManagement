@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.myorder.model.LoginUser;
 import com.myorder.model.OrderDetails;
-import com.myorder.services.UserService;
+import com.myorder.services.OrderServices;
 
-public class UserServiceImpl implements UserService{
+public class OrderServiceImpl implements OrderServices{
 
 	@Override
 	public boolean createOrder(OrderDetails orderInfo) {

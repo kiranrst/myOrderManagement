@@ -6,7 +6,7 @@ import java.util.List;
 import com.myorder.model.LoginUser;
 import com.myorder.model.OrderDetails;
 
-public interface UserService {
+public interface OrderServices {
 
 	boolean createOrder(OrderDetails orderInfo);
 
