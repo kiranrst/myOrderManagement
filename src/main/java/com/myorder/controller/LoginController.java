@@ -1,5 +1,6 @@
 package com.myorder.controller;
 
+import java.io.Console;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -45,11 +46,14 @@ public class LoginController extends HttpServlet {
 		ValidateUser validUser = new ValidateUser(user);
 		if(validUser.isValidUser())
 		{
+			dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/RegisteredUserHomePage.jsp"); 
+			dispatcher.forward(request, response);
 			//Proceed to homepage which provides the basic functionalities 
 			//like Orders, ProfileUpdate
 		}
 		else
 		{
+			
 			dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 			//TODO - write toggle error codes in login.jsp - UI designing level
