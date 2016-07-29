@@ -14,11 +14,13 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- <dependency> <groupId>j2ee</groupId> <artifactId>j2ee</artifactId> 
+			<version>5.0</version> <scope>provided</scope> </dependency> -->
 		<dependency>
-			<groupId>j2ee</groupId>
-			<artifactId>j2ee</artifactId>
-			<version>5.0</version>
-			<scope>provided</scope>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
+			<!-- <scope>runtime</scope> -->
 		</dependency>
 	</dependencies>
 	<build>
